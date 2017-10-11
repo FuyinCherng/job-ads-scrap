@@ -1,34 +1,48 @@
 <?php
 echo "JobApis Start collecting Job Ads"."\n";
+
+// --- Include source files from JobApis
 require("./vendor/autoload.php");
 require_once("./src/JobsMulti.php");
 require_once("./vendor/jobapis/jobs-adzuna/src/Providers/AdzunaProvider.php");
 require_once("./vendor/jobapis/jobs-adzuna/src/Queries/AdzunaQuery.php");
 
-//================ Input Platform and Information for Query ================
+
 // -- Set query and from which platform
 $Source = 'CareerCast'; // Stackoverflow, Github, Indeed, Dice, CareerCast, Adzuna
-$SearchWord = 'interaction design'; //if searchWord == job means approximate exhuasted search
-$pnum = 182;
+$SearchWord = 'job'; //if searchWord == job means approximate exhuasted search
+$pnum = 0;
 
 echo $Source.' '.$SearchWord."\n";
 
-//for Adzuna
+// Some special and mandatory parameter for Aszuna and CareerCast
 if($Source == 'Adzuna'){
-	#scientific-qa-jobs consultancy-jobs pr-advertising-marketing-jobs engineering-jobs it-jobs accounting-finance-jobs
-	$AdzuCate = 'engineering-jobs'; // name from aszubaJobCategory Tag.
-	$country = 'gb';  //ISO 8601 contry code: gb, au, at, br, ca: Canada, de: Germany, fr, in, it, nl, nz, pl, ru, sg, us, za
-}
+	
+	// parameter: category of jobs
+	// value of category: scientific-qa-jobs consultancy-jobs pr-advertising-marketing-jobs engineering-jobs it-jobs accounting-finance-jobs
+	$AdzuCate = 'engineering-jobs';
 
-//for careercast
+
+	// parameter: Country
+	// value of country (ISO 8601 country code): gb, au, at, br, ca: Canada, de: Germany, fr, in, it, nl, nz, pl, ru, sg, us, za
+	$country = 'gb'; 
+
+	echo 'Category of Job: '.$AdzuCate.'; Country:'.$country."\n";
+
+}
 if($Source == 'CareerCast'){
-	$careercastCate = 'Information Technology'; 
-	//other category: Accounting, Administrative / Clerical, Automotive, Biotechnology / Science, Business, Construction / Skilled Trades, Customer Service, Education,
+
+	// parameter: category of jobs
+	// vlaue of category: Accounting, Administrative / Clerical, Automotive, Biotechnology / Science, Business, Construction / Skilled Trades, Customer Service, Education,
 	//Engineering, Executive, Facilities, Financial Services, Government, Healthcare, Hospitality, Human Resources, Information Technology, Legal, Management
 	//Manufacturing / Production, Marketing, Real Estate, Retail / Wholesale, Sales / Business Development, Telecommunications, Transportation / Warehouse
+	$careercastCate = 'Information Technology'; 
+
+	echo 'Category of Job: '.$careercastCate."\n";
+	
 }
 
-// Create directory if not exist
+// --- Create directory for downloaded data if not exist
 date_default_timezone_set('GMT');
 $date = getdate();
 $dir = 'result/'.$Source.'_'.$date['mon'].'_'.$date['year'];
@@ -38,15 +52,12 @@ if(!file_exists($dir)){
 }
 
 
-//================ Input Platform and Information for Query ================
-
-
+// --- insert customed query to APIs
 $jobcount = 1;
 
 while($jobcount != 0){
 	$pnum = $pnum + 1;
 
-	//Github
 	switch($Source){
 
 		case "Github":
@@ -98,7 +109,7 @@ while($jobcount != 0){
 			date_default_timezone_set('GMT');
 			$query = new JobApis\Jobs\Client\Queries\CareercastQuery([
 		    	'keyword' => $SearchWord
-		    	//'category' => $careercastCate
+		    	'category' => $careercastCate
 			]);
 			$query->set('page', (string)$pnum);
 				
@@ -139,7 +150,7 @@ while($jobcount != 0){
 	}
 
 
-	//------ Extract Information From $jobs ------
+	//------ Extract Information from returns
 	$jobcount = $jobs->count();
 	if($jobcount <= 0){
 		echo "No more job ads for given query avaliable.";
@@ -194,15 +205,12 @@ while($jobcount != 0){
 		$fout_Title = $j->getTitle();
 		$fout_WorkHours = $j->getWorkHours();
 		$fout_DatePosted = $j->getDatePosted()->format(DateTime::ISO8601);
-
-		
-		// Get from Thing.php
 		$fout_alternateName = $j->getAlternateName();
 		$fout_Description = $j->getDescription();
 		$fout_Name = $j->getName();
 		$fout_Url = $j->getUrl();
 
-
+		// --- save job info as json formate
 		$array = array(
 			'Query' => $fout_Query,
 			'Source' => $fout_Source,
@@ -252,8 +260,7 @@ while($jobcount != 0){
 				)
 			);
 
-		//output to file
-		//fwrite($fp,$list);
+		// --- save json file
 		fwrite($fp,json_encode($array));
 		if($i != ($jobs->count()-1)){
 			fwrite($fp,',');

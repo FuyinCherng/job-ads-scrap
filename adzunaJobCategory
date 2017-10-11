@@ -1,0 +1,185 @@
+
+
+__CLASS__
+Adzuna::API::Response::Categories
+results
+__CLASS__
+Adzuna::API::Response::Category
+label
+Accounting & Finance Jobs
+tag
+accounting-finance-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+IT Jobs
+tag
+it-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Sales Jobs
+tag
+sales-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Customer Services Jobs
+tag
+customer-services-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Engineering Jobs
+tag
+engineering-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+HR & Recruitment Jobs
+tag
+hr-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Healthcare & Nursing Jobs
+tag
+healthcare-nursing-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Hospitality & Catering Jobs
+tag
+hospitality-catering-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+PR, Advertising & Marketing Jobs
+tag
+pr-advertising-marketing-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Logistics & Warehouse Jobs
+tag
+logistics-warehouse-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Teaching Jobs
+tag
+teaching-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Trade & Construction Jobs
+tag
+trade-construction-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Admin Jobs
+tag
+admin-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Legal Jobs
+tag
+legal-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Creative & Design Jobs
+tag
+creative-design-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Graduate Jobs
+tag
+graduate-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Retail Jobs
+tag
+retail-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Consultancy Jobs
+tag
+consultancy-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Manufacturing Jobs
+tag
+manufacturing-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Scientific & QA Jobs
+tag
+scientific-qa-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Social work Jobs
+tag
+social-work-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Travel Jobs
+tag
+travel-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Energy, Oil & Gas Jobs
+tag
+energy-oil-gas-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Property Jobs
+tag
+property-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Charity & Voluntary Jobs
+tag
+charity-voluntary-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Domestic help & Cleaning Jobs
+tag
+domestic-help-cleaning-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Maintenance Jobs
+tag
+maintenance-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Part time Jobs
+tag
+part-time-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Other/General Jobs
+tag
+other-general-jobs
+__CLASS__
+Adzuna::API::Response::Category
+label
+Unknown
+tag
+unknown

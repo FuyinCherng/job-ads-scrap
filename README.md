@@ -38,12 +38,12 @@ Please note that not all the items are provided by all the job boards. Actually,
 Based on the job ads I collected in 2017, I listed what special items are provided by each job boards.
 All the job board provide items in **Search Info**. 
 
-- Github Jobs
-- Stack Overflow Jobs
-- Indeed
-- Dice
-- CareerCast
-- Adzuna
+- **Github Jobs**: Full description of job, Company url, City, State. 
+- **Stack Overflow Jobs**: Skills, Snippet description (No Location, Company and Salary items).
+- **Indeed**: Company name, City, State, Snippet description.
+- **Dice**: Company name, City and State.
+- **CareerCast**: Country, City, Latitude, Longitude, State, ,Comany name, Full Description (Recommend this job board for scraping job ads because of richer information.)
+- **Adzuna**: Location, Company name, Latitude, Longitude, Salary (Base & minimum), Snippet description. (Recommend for those who want to analyze on salary)
 
 
 ## Usage

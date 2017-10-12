@@ -108,7 +108,7 @@ while($jobcount != 0){
 		case "CareerCast":
 			date_default_timezone_set('GMT');
 			$query = new JobApis\Jobs\Client\Queries\CareercastQuery([
-		    	'keyword' => $SearchWord
+		    	'keyword' => $SearchWord,
 		    	'category' => $careercastCate
 			]);
 			$query->set('page', (string)$pnum);

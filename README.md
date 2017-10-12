@@ -1,4 +1,5 @@
-# Scrap Job Ads from Online Job Board
+# Job Advertisement Scraping
+
 This is an example and practice of how to use [Jobapis](https://github.com/jobapis/jobs-multi), an open source for integrating APIs from multiple online job board, to scrap job advertisements from these online job boards. 
 I found there are some difficulties when I followed their toturial and examples (This is my first PHP project, so maybe it takes me more time to figure out everything). I also got some useful observation when I tried to scrap job ads from different job boards. Therefore, I would like to share my findings and my programs to those who also want to use [Jobapis](https://github.com/jobapis/jobs-multi) to scrap job ads.
 

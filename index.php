@@ -167,29 +167,35 @@ while($jobcount != 0){
 	for ($i = 0; $i < $jobs->count(); $i++){
 		$j = $jobs->get($i);
 
-		//Get from Job.php
+		//Search Info
+		$fout_Query = $j->getQuery();
+		$fout_Source = $j->getSource();
+		$fout_DatePosted = $j->getDatePosted()->format(DateTime::ISO8601);
+		$fout_Url = $j->getUrl();
+
+		//Company Info
 		$fout_CompanyDescription = $j->getCompanyDescription();
 		$fout_CompanyEmail = $j->getCompanyEmail();
 		$fout_CompanyLogo = $j->getCompanyLogo();
 		$fout_CompanyName = $j->getCompanyName();
 		$fout_CompanyUrl = $j->getCompanyUrl();
 
+
+		//Location Info
 		$fout_Country = $j->getCountry();
 		$fout_City = $j->getCity();
 		$fout_Latitude = $j->getLatitude();
 		$fout_Longitude = $j->getLongitude();
 		$fout_Location = $j->getLocation();
 		$fout_State = $j->getState();
-		$fout_Telephone = $j->getStreetAddress();
-
 		$fout_PostalCode = $j->getPostalCode();
-		$fout_MinSalary = $j->getMinimumSalary();
-		$fout_Query = $j->getQuery();
-		$fout_Source = $j->getSource(); //which provider
 
 
-		// Get from JobPosting.php (by extend)	
+		//Job Info
+		$fout_MinSalary = $j->getMinimumSalary();	
 		$fout_BaseSalary = $j->getBaseSalary();
+		$fout_SalaryCurrency = $j->getSalaryCurrency();
+		$fout_Description = $j->getDescription();
 		$fout_JobBenefits = $j->getJobBenefits();
 		$fout_EducationReq = $j->getEducationRequirements();
 		$fout_EmploymentType = $j->getEmploymentType();
@@ -199,16 +205,12 @@ while($jobcount != 0){
 		$fout_OccupationalCategory = $j->getOccupationalCategory();
 		$fout_Qualifications = $j->getQualifications();
 		$fout_Responsibilities = $j->getResponsibilities();
-		$fout_SalaryCurrency = $j->getSalaryCurrency();
 		$fout_Skills = $j->getSkills();
 		$fout_SpecialCommitments = $j->getSpecialCommitments();
 		$fout_Title = $j->getTitle();
-		$fout_WorkHours = $j->getWorkHours();
-		$fout_DatePosted = $j->getDatePosted()->format(DateTime::ISO8601);
+		$fout_WorkHours = $j->getWorkHours();		
 		$fout_alternateName = $j->getAlternateName();
-		$fout_Description = $j->getDescription();
 		$fout_Name = $j->getName();
-		$fout_Url = $j->getUrl();
 
 		// --- save job info as json formate
 		$array = array(

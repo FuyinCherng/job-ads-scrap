@@ -6,7 +6,7 @@ I found there are some difficulties when I followed their toturial and examples 
 *There are more examples on the github of [Jobapis/example](https://github.com/jobapis/jobs-multi/tree/master/example).*
 
 ## About
-I included the source files for each job board directly in `index.php`. In `index.php`, you can set up the following main parameters:
+I included the source files for each job board directly in `jobads_scrap.php`. In `jobads_scrap.php`, you can set up the following main parameters:
 
 - `$Source`: The name of job board that I scrap job ads from.
 - `$SearchWord`: The keyword for job searching in given job board.
@@ -48,7 +48,7 @@ All the job board provide items in **Search Info**.
 
 
 ## Usage
-1. run `index.php`
+1. run `jobads_scrap.php`
 2. the scraped files will be stroed in `result` folder
 3. In `result` folder, the data will save in the folder named by `JobBoard_Month_Year`.
 4. each file is named by the formate: `JobBoard_searchQuery_pageNum`. The file formate is json.
